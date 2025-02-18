@@ -1,0 +1,17 @@
+{
+    "sourceDirectory": "E:/Tools/stable-diffusion-webui-models",
+    "targetDirectories": [
+        {
+            "Path": "E:/Tools/stable-diffusion-webui/models",
+            "Mappings": {
+                "text_encoder": "CLIP"
+            }
+        },
+        {
+            "Path": "E:/Tools/stable-diffusion-webui-forge/models",
+            "Mappings": {
+                
+            }
+        }
+    ]
+}

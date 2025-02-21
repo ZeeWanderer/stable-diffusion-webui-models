@@ -2,11 +2,11 @@
 
 ## Link-Models
 
-`Link-Models.ps1` is designed to create hardlinks for files from a source directory to multiple target directories based on a configuration file. The configuration file, `configuration.json`, specifies the source directory and a list of target directories with optional subdirectory mappings.
+[Link-Models.ps1](/Link-Models.ps1) is a PowerShell script that creates hardlinks from a source directory to one or more target directories as defined in a configuration file. The configuration file (`configuration.json`) specifies the source directory along with an array of target directories, each optionally including subdirectory mappings.
 
 ## Example Configuration
 
-The `example_configuration.json` file provides a template for configuring the source and target directories for the model management script. Below is an example of what the configuration file might look like:
+The `example_configuration.json` file serves as a template for setting up the directories and mappings. For example:
 
 ```json
 {
@@ -27,7 +27,7 @@ The `example_configuration.json` file provides a template for configuring the so
 }
 ```
 
-- `sourceDirectory`: The directory where the source models are located.
-- `targetDirectories`: An array of target directories where hardlinks will be created.
-  - `Path`: The path to the target directory.
-  - `Mappings`: A hashtable that maps subdirectory names in the source directory to new names in the target directory. If a subdirectory should be skipped, it can be mapped to `nil`.
+- `sourceDirectory`: The location of the source models.
+- `targetDirectories`: An array defining where hardlinks should be created.
+  - `Path`: The path of the target directory.
+  - `Mappings`: A hashtable mapping subdirectory names from the source to new names in the target directory. A mapping value of `nil` indicates that the corresponding subdirectory should be skipped.

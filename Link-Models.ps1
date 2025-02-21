@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param ()
 
-$configPath = "E:/Tools/stable-diffusion-webui-models/configuration.json"
+$configPath = Join-Path -Path $PSScriptRoot -ChildPath "configuration.json"
 
 try {
     Write-Verbose "Reading configuration file from '$configPath'"
@@ -49,7 +49,7 @@ function New-Hardlinks {
 
                 Write-Verbose "Processing subdirectory '$($item.FullName)'"
                 New-Hardlinks -sourcePath $item.FullName -targetPath $newTargetPath -mappings $mappings
-            } elseif ($item.Name -ne $scriptName -and $item.Extension -ne ".ps1" -and $item.Name -ne "configuration.json") {
+            } elseif ($item.Name -ne $scriptName -and $item.Extension -ne ".ps1" -and $item.Name -ne "configuration.json" -and $item.Name -ne "example_configuration.json") {
                 $hardlinkPath = Join-Path -Path $targetPath -ChildPath $item.Name
                 if (-not (Test-Path -Path $hardlinkPath)) {
                     Write-Verbose "Creating hardlink from '$($item.FullName)' to '$hardlinkPath'"

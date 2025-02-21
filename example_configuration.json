@@ -1,0 +1,16 @@
+{
+    "sourceDirectory": "E:/Models/source",
+    "targetDirectories": [
+        {
+            "Path": "E:/Models/target1",
+            "Mappings": {
+                "subdir1": "mappedSubdir1",
+                "subdir2": "nil"
+            }
+        },
+        {
+            "Path": "E:/Models/target2",
+            "Mappings": {}
+        }
+    ]
+}

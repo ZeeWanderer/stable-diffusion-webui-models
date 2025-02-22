@@ -83,7 +83,7 @@ function New-Hardlinks {
             }
             elseif ($item.Name -ne $scriptName -and `
                     $item.Extension -notin @(".ps1", ".md") -and `
-                    $item.Name -notin @("configuration.json", "example_configuration.json")) {
+                    $item.Name -notin @("configuration.json", "example_configuration.json", ".gitignore")) {
                 $hardlinkPath = Join-Path -Path $TargetPath -ChildPath $item.Name
                 if (-not (Test-Path -Path $hardlinkPath)) {
                     if ($PSCmdlet.ShouldProcess($hardlinkPath, "Create hardlink from '$($item.FullName)'")) {
